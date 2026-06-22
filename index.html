@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Karina, Printesa mea</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ----------- HERO ----------- -->
+  <header class="hero">
+    <h1>Salut, <span id="nick">Printesa</span>!</h1>
+    <p>Începe aventura și vezi ce am pregătit pentru tine.</p>
+    <button id="startBtn">Începe</button>
+  </header>
+
+  <!-- ----------- GALERIE ----------- -->
+  <section id="gallery" class="hidden">
+    <h2>Momentele noastre</h2>
+    <div class="photos"></div>
+    <button id="closeGallery">Închide</button>
+  </section>
+
+  <!-- ----------- ÎNTREBAREA DE IUBIRE ----------- -->
+  <section id="loveBox" class="hidden">
+    <div class="box">
+      <p class="question">M‑ă iubești?</p>
+      <div class="answers">
+        <button class="answer" data-value="da">Da</button>
+        <button class="answer" data-value="nu">Nu</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ----------- SURPRIZA FINALĂ ----------- -->
+  <section id="finalMsg" class="hidden">
+    <h2>❤️❤️❤️</h2>
+    <p>Vreau să te iau în <strong>Mare</strong> sau la <strong>Piscină</strong>!</p>
+    <div class="choices">
+      <button class="choice" data-answer="Mare">Mare</button>
+      <button class="choice" data-answer="Piscină">Piscină</button>
+    </div>
+    <p id="answerMsg" class="hidden"></p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
