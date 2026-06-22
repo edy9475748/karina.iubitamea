@@ -17,24 +17,30 @@ body{background:#f0f8ff;color:#212121;text-align:center;padding:2rem;}
 }
 .hero button:hover{background:#004c99;}
 
-/* ---------- Hidden sections ---------- */
-section{margin-top:2rem;padding:2rem;background:#fff;border-radius:12px;
-  box-shadow:0 2px 8px rgba(0,0,0,.08);}
+/* ---------- Hidden ----------
+   (folosim clasa .hidden pentru a ascunde secţiuni) */
 .hidden{display:none;}
 
-/* ---------- Gallery ---------- */
-.photos{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
-  gap:1rem;margin:1rem 0;
+/* ---------- Balloon animation ----------
+   Balonul urcă, la atingere „pop‑ează” în inimioare */
+#animation{margin:2rem 0;}
+.balloon{
+  width:80px;height:120px;
+  background:url('data:image/svg+xml;utf8,\
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">\
+<path fill="%23ff4081" d="M32 2C17 2 5 14 5 29c0 12 9 22 20 24v8h14v-8c11-2 20-12 20-24C59 14 47 2 32 2z"/>\
+</svg>') no-repeat center/contain;
+  margin:0 auto;
+  animation:float 3s infinite ease-in-out;
+  cursor:pointer;
 }
-.photos img{
-  width:100%;height:auto;border-radius:8px;object-fit:cover;
-  transition:transform .3s;
+@keyframes float{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-20px);}
 }
-.photos img:hover{transform:scale(1.05);}
 
-/* ---------- Love box ---------- */
+/* ---------- Love box ----------
+   Cutia cu întrebarea „M‑ă iubești?” */
 #loveBox .box{
   background:#e6f7ff;
   padding:2rem;
@@ -55,7 +61,8 @@ section{margin-top:2rem;padding:2rem;background:#fff;border-radius:12px;
 }
 .answers button:hover{transform:translateY(-4px);}
 
-/* ---------- Finală ---------- */
+/* ---------- Finală ----------
+   Butoane „Mare” / „Piscină” */
 #finalMsg h2{font-size:3rem;margin-bottom:.5rem;}
 .choices{display:flex;justify-content:center;gap:2rem;margin-top:1rem;}
 .choice{
@@ -65,8 +72,8 @@ section{margin-top:2rem;padding:2rem;background:#fff;border-radius:12px;
 .choice:hover{background:#004c99;transform:translateY(-4px);}
 #answerMsg{font-size:1.4rem;margin-top:1.5rem;color:#003366;}
 
-/* ---------- Hearts falling (when “Da” pressed) ---------- */
-@keyframes fall {
+/* ---------- Falling hearts (when “Da” pressed) ---------- */
+@keyframes fall{
   0%   {transform: translateY(-50px) rotate(0deg); opacity:0;}
   10%  {opacity:1;}
   100% {transform: translateY(800px) rotate(360deg); opacity:0;}
